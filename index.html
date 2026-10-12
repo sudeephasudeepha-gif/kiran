@@ -308,9 +308,9 @@ let mAc,mOn=false,mTimer,mAudio;
 const SONG=[[392,.75],[392,.25],[440,1],[392,1],[523,1],[494,2],[392,.75],[392,.25],[440,1],[392,1],[587,1],[523,2],[392,.75],[392,.25],[784,1],[659,1],[523,1],[494,1],[440,1],[698,.75],[698,.25],[659,1],[523,1],[587,1],[523,2]];
 function note(f,t,d){for(const[m,v]of[[1,.12],[2,.04]]){const o=mAc.createOscillator(),g=mAc.createGain();o.frequency.value=f*m;g.gain.setValueAtTime(.0001,t);g.gain.exponentialRampToValueAtTime(v,t+.02);g.gain.exponentialRampToValueAtTime(.0001,t+Math.max(d,.5)+.6);o.connect(g);g.connect(mAc.destination);o.start(t);o.stop(t+d+1.2)}}
 function playSong(){if(!mOn)return;let t=mAc.currentTime+.1;for(const[f,d]of SONG){note(f,t,d*.55);t+=d*.55}mTimer=setTimeout(playSong,(t-mAc.currentTime+2.5)*1000)}
-function startMusic(){mOn=true;if(MUSIC_URL){mAudio=mAudio||Object.assign(new Audio(MUSIC_URL),{loop:true});mAudio.play().catch(()=>{})}else{mAc=new(window.AudioContext||window.webkitAudioContext)();playSong()}$('mus').style.display='block';$('mus').textContent=''}
+function startMusic(){mOn=true;if(MUSIC_URL){mAudio=mAudio||Object.assign(new Audio(MUSIC_URL),{loop:true});mAudio.play().catch(()=>{})}else{mAc=new(window.AudioContext||window.webkitAudioContext)();playSong()}$('mus');$('mus').textContent=''}
 function stopMusic(){mOn=false;clearTimeout(mTimer);if(mAudio)mAudio.pause();if(mAc){mAc.close();mAc=null}}
-$('mus').onclick=()=>{if(mOn){stopMusic();$('mus').textContent='🔇'}else startMusic()};
+$('mus').onclick=()=>{if(mOn){stopMusic();$('mus').textContent=''}else startMusic()};
 
 
 </script>
