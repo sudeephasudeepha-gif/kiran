@@ -56,7 +56,7 @@ input[type=text],textarea{width:100%;padding:9px 12px;margin:4px 0 10px;border-r
 </head>
 <body>
 <canvas id="gl"></canvas>
-<div class="top"><h1 id="title">Happy Birthday!</h1><div id="sub">Another trip around the sun</div></div>
+<div class="top"><h1 id="title">Happy Birthday Kiran !</h1><div id="sub"></div></div>
 <div id="cap" aria-live="polite"></div>
 <div id="hint">Drag to spin the 3D gallery</div>
 <button id="go" class="btn btn-lg rounded-pill px-4">Next page ▶</button>
@@ -64,7 +64,7 @@ input[type=text],textarea{width:100%;padding:9px 12px;margin:4px 0 10px;border-r
   <p class="msg" id="msg">Wishing you laughter, cake and endless good memories. Thanks for being the best friend ever!</p>
 </div>
 <div id="cover" tabindex="0" role="button" aria-label="Open the birthday box"><div class="pic" id="cpic"></div><p class="cap" id="ccap"></p></div>
-<button id="mus" class="btn rounded-circle" aria-label="Music on or off" style="display:none">🔊</button>
+<button id="mus" class="btn rounded-circle" aria-label="Music on or off" style="display:none"></button>
 <canvas id="cv" aria-hidden="true"></canvas>
 <div id="nogl" hidden>Your browser could not start 3D graphics. Please open this link in Chrome or Safari.</div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
@@ -75,7 +75,7 @@ input[type=text],textarea{width:100%;padding:9px 12px;margin:4px 0 10px;border-r
 // (cover, centre of the gallery and centre of the threads page).
 // Replace any ph(n) with a picture path like 'images/pic1.jpg'
 // (put the images next to this file) or a full image link.
-const NAME='Sarah';
+const NAME='Kiran';
 const ph=n=>{
   const h=[330,40,270,200,10,150,300,60,230][(n-1)%9],e=['🎂','🎈','🎁','🥳','🍰','🎶','✨','🎊','💖'][(n-1)%9];
   const svg='<svg xmlns="http://www.w3.org/2000/svg" width="400" height="480"><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="hsl('+h+',85%,65%)"/><stop offset="1" stop-color="hsl('+((h+60)%360)+',80%,40%)"/></linearGradient></defs><rect width="400" height="480" fill="url(#g)"/><text x="200" y="250" font-size="120" text-anchor="middle">'+e+'</text><text x="200" y="350" font-size="34" fill="#fff" text-anchor="middle" font-family="sans-serif">Photo '+n+'</text></svg>';
