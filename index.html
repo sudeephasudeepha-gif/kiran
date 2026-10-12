@@ -116,7 +116,7 @@ function main(){
 
   // stars and sparkles
   {
-    const n=1800,pos=new Float32Array(n*3),col=new Float32Array(n*3),c=new THREE.Color();
+    const n=1000,pos=new Float32Array(n*3),col=new Float32Array(n*3),c=new THREE.Color();
     for(let i=0;i<n;i++){
       const r=i<1500?40+Math.random()*60:6+Math.random()*10,a=Math.random()*6.283,b=Math.acos(2*Math.random()-1);
       pos[i*3]=r*Math.sin(b)*Math.cos(a);pos[i*3+1]=r*Math.cos(b);pos[i*3+2]=r*Math.sin(b)*Math.sin(a);
